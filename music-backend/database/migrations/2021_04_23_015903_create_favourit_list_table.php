@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAlbumsTable extends Migration
+class CreateFavouritListTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateAlbumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('albums', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->integer('artist');
-            $table->integer('genre');
-            $table->string('path');
-            $table->timestamps();
+        Schema::create('favourit_list', function (Blueprint $table) {
+            $table->id();
         });
     }
 
@@ -30,6 +25,6 @@ class CreateAlbumsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('albums');
+        Schema::dropIfExists('favourit_list');
     }
 }

@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\FavouriteListController;
+use App\Http\Controllers\UserPlayListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +19,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::group([
+    'prefix' => 'auth'
+],function(){
+    Route::post('login', [UserController::class, 'login']);
+    Route::post('register', [UserController::class, 'register']);
+
+    Route::group([
+        'middleware' => 'auth:api'
+    ],function(){
+    Route::post('logout', [UserController::class, 'logout']);
+    Route::get('user', [UserController::class, 'user']);
+    });
+});
+Route::group([
+    'middleware' => 'auth:api'
+],function(){
+Route::get('/user/favourite-list', [FavouriteListController::class, 'index']);
+Route::get('/user/play-list', [UserPlayListController::class, 'index']);
 });
