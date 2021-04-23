@@ -2,18 +2,33 @@
 
 clone repo
 
+move to xampp/htdocs
+
 composer update
 
 php artisan migrate
 
+php artisan serve: --> {{url}}
+
 # laravel/passport
 
-Tham khao docs cua laravel/passport
+composer install
 
-php artisan require laravel/passport
+# router for front-end
 
-php artisan migrate
+register:(post) {{url}/api/auth/register
 
-php artisan passport:install
+login :(post) {{url}}/api/auth/login
+
+logout:(post) {{url}}/api/auth/logout
+
+user:(get) {{url}}/api/auth/user
+
+favouritelist:(get) {{url}}/api/user/favourite-list
+
+favouritelist:(get) {{url}}/api/user/play-list
+
+when test by postman you must send access token: click tab authorization select bearer and paste token except route register
+
 
 
