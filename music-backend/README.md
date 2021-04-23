@@ -29,7 +29,7 @@ favouritelist:(get) {{url}}/api/user/favourite-list
 
 playlist:(get) {{url}}/api/user/play-list
 
-when test by postman you must send access token: click tab authorization select bearer and paste token except,
+when test by postman you must send access token: click tab authorization select bearer and paste token ,
 
 do it for all route except register and login
 
