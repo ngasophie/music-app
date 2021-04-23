@@ -4,7 +4,7 @@ clone repo
 
 move to xampp/htdocs
 
-composer update
+composer install
 
 php artisan migrate
 
