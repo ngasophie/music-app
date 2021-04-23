@@ -11,6 +11,7 @@ php artisan migrate
 php artisan serve: --> {{url}}
 
 # laravel/passport
+if your project already exists:
 
 composer install
 
