@@ -6,7 +6,7 @@ composer update
 
 php artisan migrate
 
-#laravel/passport
+# laravel/passport
 
 Tham khao docs cua laravel/passport
 
