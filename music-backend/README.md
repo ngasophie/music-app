@@ -27,7 +27,7 @@ user:(get) {{url}}/api/auth/user
 
 favouritelist:(get) {{url}}/api/user/favourite-list
 
-favouritelist:(get) {{url}}/api/user/play-list
+playlist:(get) {{url}}/api/user/play-list
 
 when test by postman you must send access token: click tab authorization select bearer and paste token except route register
 
