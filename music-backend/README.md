@@ -29,7 +29,7 @@ favouritelist:(get) {{url}}/api/user/favourite-list
 
 playlist:(get) {{url}}/api/user/play-list
 
-songs:(get) {{url}}/songs       (**20 songs/page**)
+songs:(get) {{url}}/songs       (/////**20 songs/page**)
 
 song:(get) {{url}}/song/{id}
 
