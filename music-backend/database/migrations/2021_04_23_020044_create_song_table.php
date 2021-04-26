@@ -13,6 +13,7 @@ class CreateSongTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('song');
         Schema::create('songs', function (Blueprint $table) {
             $table->id();
         });

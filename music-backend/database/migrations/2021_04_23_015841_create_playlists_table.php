@@ -13,6 +13,7 @@ class CreatePlaylistsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('playlists');
         Schema::create('playlists', function (Blueprint $table) {
             $table->id();
         });

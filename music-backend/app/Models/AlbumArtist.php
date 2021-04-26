@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Album extends Model
+class AlbumArtist extends Model
 {
     use HasFactory;
-    protected $table = 'albums';
+    protected $table = 'album_artist';
 }
