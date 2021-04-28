@@ -16,9 +16,13 @@ use App\Http\Resources\ArtistCollection;
 use App\Http\Resources\GenreCollection;
 class AlbumController extends Controller
 {
-    public function getAlbums()
+     public function getAlbums()
     {
         $albums = DB::table('albums')->get();
+        foreach($albums as $a){
+            $arr_artists = ArtistCollection::getAlbumArtist($a->id);
+            $a->artists = $arr_artists;
+        }
         return response()->json(['albums' => $albums]);
     }
 
