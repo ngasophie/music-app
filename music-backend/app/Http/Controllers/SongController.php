@@ -16,19 +16,8 @@ class SongController extends Controller
         $songs = Song::paginate(20);
         return response()->json(['songs' => $songs]);
     }
-    // public function getPage($page){
-    //     $start_page = 20 * ($page - 1);
-    //     $end_page = 20 * $page + 1;
-    //     $songs = DB::table('songs')->where('id', '>', $start_page)
-    //     ->where('id', '<', $end_page)->get();
-    //     return response()->json([
-    //         'page' => $page,
-    //         'songs' => $songs
-    //     ]);
-    // }
-
     public function getSong($id){
-        $song = DB::table('songs')->where('id', $id)->get();
+        $song = Song::where('id', $id)->get();
         $song_artist = SongArtist::where('song_id', $id)->get();
         $song_genre = SongGenre::where('song_id', $id)->get();
         $arr_artist = array();

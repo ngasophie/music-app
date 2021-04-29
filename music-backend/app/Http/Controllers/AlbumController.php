@@ -16,7 +16,7 @@ class AlbumController extends Controller
 {
     public function getAlbums()
     {
-        $albums = DB::table('albums')->get();
+        $albums = Album::all();
         return response()->json(['albums' => $albums]);
     }
 
