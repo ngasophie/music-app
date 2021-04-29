@@ -38,6 +38,10 @@ albums:(get) {{url}}/albums
 
 album:(get) {{url}}/album-songs/{album_id}
 
+tìm bài hát theo thể loại:(get) {{url}}/songs-genre/{genre_id}
+
+tìm bài hát theo từ khóa:(get) {{url}}/songs-search
+
 when test by postman you must send access token: click tab authorization select bearer and paste token ,
 
 do it for all route except register and login
