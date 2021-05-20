@@ -33,9 +33,8 @@ class UserController extends Controller
     }
     public function register(Request $request){
         $validator = Validator::make($request->all(), [
-            'username' => 'string|max:255|unique:users',
+            'username' => 'string|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'displayName' => 'string|max:16',
             'password' => 'required|min:6|confirmed',
         ]);
         if($validator->fails()){
@@ -45,9 +44,7 @@ class UserController extends Controller
             $user = User::create([
                 'username' => $request['username'],
                 'email' => $request['email'],
-                'displayName' => $request['displayName'],
                 'password' => bcrypt($request['password']),
-                'phone' => $request['phone']
             ]);
             return response()->json([
                 'message' => 'User successfully registered',
