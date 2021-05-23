@@ -62,4 +62,23 @@ class UserController extends Controller
     public function user(Request $request){
         return response()->json($request->user());
     }
+    public function updateProfile(Request $request, $id)
+    {
+        $user = User::find($id);
+        if($request->username == null){
+            $request->username = $user->username;
+        }
+        if($request->phone == null){
+            $request->phone = $user->phone;
+        }
+        if($request->displayName == null){
+            $request->displayName = $user->displayName;
+        }
+        $userUpdate = [
+            'username' => $request->username,
+            'phone' => $request->phone, 
+            'displayName' => $request->displayName
+        ];
+        $user->update($userUpdate);
+    }
 }
