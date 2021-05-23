@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\FavouriteList;
+use Illuminate\Support\Facades\DB;
 use App\Http\Resources\FavouriteListCollection;
 class FavouriteListController extends Controller
 {
@@ -17,7 +19,18 @@ class FavouriteListController extends Controller
         //get list
         return new FavouriteListCollection(User::where('id', $request->id)->get());
     }
+    public function addFavorite(Request $request){
+        DB::table('favorite_list')->insert([
+            'user_id' => $request->id,
+            'song_id' => $request->song_id
+        ]);
+    }
 
+    public function deleteFavorite(Request $request){
+        FavouriteList::where('user_id', $request->id)
+        ->where('song_id', $request->song_id)
+        ->delete();
+    }
     /**
      * Show the form for creating a new resource.
      *
