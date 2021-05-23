@@ -4,9 +4,13 @@ clone repo
 
 move to xampp/htdocs
 
-composer install
+.env
+
+composer install --ignore-platform-reqs
 
 php artisan migrate
+
+php artisan passport:install
 
 php artisan serve: --> {{url}}
 
