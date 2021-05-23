@@ -39,3 +39,6 @@ Route::group([
 Route::get('/user/favourite-list', [FavouriteListController::class, 'index']);
 Route::get('/user/play-list', [UserPlayListController::class, 'index']);
 });
+Route::post('user/edit-profile/{id}', [UserController::class, 'updateProfile']);
+Route::post('user/add-favoritelist', [FavouriteListController::class, 'addFavorite']);
+Route::post('user/delete-favoritelist', [FavouriteListController::class, 'deleteFavorite']);
