@@ -50,7 +50,7 @@ when test by postman you must send access token: click tab authorization select 
 
 do it for route user/logout/favouritelist/playlist
 
-edit user-info:     (post) {{url}}/api/user/user/edit-profile/{id} **[id của user]** **[request->username (hoặc/và) phone (hoặc/và) displayName]**
+edit user-info:     (post) {{url}}/api/user/edit-profile/{id} **[id của user]** **[request->username (hoặc/và) phone (hoặc/và) displayName]**
 
 add favorite:       (post) {{url}}/api/user/add-favoritelist **[request->id, song_id]**
 
